@@ -16,14 +16,13 @@
 	echo ($stmt);
 	
 	if ($stmt) {  
-		echo "Row successfully inserted.\n";  
+		echo "true"; 
 	} else {  
-		echo "Row insertion failed.\n";  
-		die(print_r(sqlsrv_errors(), true));  
+		echo "false"; 
 	}  
 	  
 	/* Free statement and connection resources. */  
+	sqlsrv_close($conn); 
 	sqlsrv_free_stmt($stmt);  
-	sqlsrv_close($conn);  
 	
 ?>  
