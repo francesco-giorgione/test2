@@ -1,20 +1,15 @@
 <?php
-$host = 'ilike.database.windows.net';
-$username = 'CloudSAe14a0d66';
-$password = 'iLike_2022';
-$db_name = 'iLike';
+    $serverName = "ilike.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "iLike", // update me
+        "Uid" => "CloudSAe14a0d66", // update me
+        "PWD" => "iLike_2022" // update me
+    );
 
-//Initializes MySQLi
-$conn = mysqli_init();
+    echo 'Ora provo a connettermi al db';    
 
-mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-// Establish the connection
-mysqli_real_connect($conn, 'ilike.database.windows.net', 'CloudSAe14a0d66', 'iLike_2022', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
-
-//If connection failed, show the error
-if (mysqli_connect_errno())
-{
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
+    echo 'Connessione riuscita';
 ?>
