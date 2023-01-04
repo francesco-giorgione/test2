@@ -18,14 +18,16 @@
         echo "PROBLEMA";
     else
         echo "OK";
+	
+	$output = array();
+	$i = 0;
 
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-	//stampiamo il risultato in formato json
-	print($row);
+		$output[i] = $row;
+		$i = $i + 1;
     }
-	
-	
-		
-    echo 'Sono alla fine';
+
+    print(json_encode($output));
+	print("Sono alla fine");
 
 ?>
