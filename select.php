@@ -26,7 +26,8 @@
 		$output[i] = $row;
 		$i = $i + 1;
     }
-
+	
+	print($output);
     print(json_encode($output));
 	print("Sono alla fine");
 
