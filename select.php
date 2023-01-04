@@ -20,9 +20,12 @@
         echo "OK";
 
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ("Nuovo risultato");
+		$ouptut[] = $row;
     }
-
+	
+	//stampiamo il risultato in formato json
+	print(json_encode($output));
+		
     echo 'Sono alla fine';
 
 ?>
