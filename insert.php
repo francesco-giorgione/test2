@@ -14,9 +14,12 @@
 }  
    
 	$tsql = $_POST['query'];
+	echo ($tsql);
 	  
 	/* Prepare and execute the query. */  
 	$stmt = sqlsrv_query($conn, $tsql);  
+	echo "Creato statement";
+	
 	if ($stmt) {  
 		echo "Row successfully inserted.\n";  
 	} else {  
