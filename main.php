@@ -1,8 +1,8 @@
 <?php
-$db_host = "yourDbHost";
-$db_name = " yourDbName ";
-$db_user = " yourDbUser ";
-$db_password = " yourDbPass ";
+$db_host = "ilike.database.windows.net";
+$db_name = " iLike";
+$db_user = "CloudSAe14a0d66";
+$db_password = " iLike_2022";
 
 //connessione al database
 $db = mysql_connect($db_host, $db_user, $db_password);
