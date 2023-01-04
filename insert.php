@@ -11,11 +11,12 @@
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql = $_POST['query'];
+	echo($tsql);
 	
-	if ($conn->query($sql) === TRUE) {
+	if ($conn->query($tsql) === TRUE) {
 		echo "New record created successfully";
 	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
+		echo "Error: " . $tsql . "<br>" . $conn->error;
 	}
 
 	$conn->close();
