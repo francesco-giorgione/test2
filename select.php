@@ -23,11 +23,10 @@
 	$i = 0;
 
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-		$output[i] = $row;
+		$output[$i] = $row;
 		$i = $i + 1;
     }
 	
-	print($output);
     print(json_encode($output));
 	print("Sono alla fine");
 
