@@ -10,6 +10,7 @@
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql = $_POST['query'];
+	echo ($tsql);
     $getResults= sqlsrv_query($conn, $tsql);
 
 
