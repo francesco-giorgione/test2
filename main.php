@@ -1,10 +1,10 @@
 <?php
-echo "Sto provando a connettermi al db";
-
 $db_host = "ilike.database.windows.net";
 $db_name = " iLike";
 $db_user = "CloudSAe14a0d66";
 $db_password = " iLike_2022";
+
+echo "Sto provando a connettermi al db";
 
 //connessione al database
 $db = mysql_connect($db_host, $db_user, $db_password);
