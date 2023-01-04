@@ -13,11 +13,11 @@
     die(print_r(sqlsrv_errors(), true));  
 }  
    
-	$tsql = $_POST['query'];
+	$tsql = "select * from Contenuti";
 	echo ($tsql);
 	  
 	/* Prepare and execute the query. */  
-	$stmt = sqlsrv_query($conn, $tsql);  
+	$stmt = sqlsrv_query($conn, $tsql); 
 	echo "Creato statement";
 	
 	if ($stmt) {  
