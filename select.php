@@ -21,7 +21,7 @@
 
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 	//stampiamo il risultato in formato json
-	print(json_encode($row));
+	print($row);
     }
 	
 	
