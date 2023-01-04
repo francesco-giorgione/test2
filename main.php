@@ -1,5 +1,5 @@
 <?php
-    $serverName = "ilike.database.windows.net"; // update me
+    $serverName = "ilike.database.windows.net.com"; // update me
     $connectionOptions = array(
         "Database" => "iLike", // update me
         "Uid" => "CloudSAe14a0d66", // update me
@@ -12,4 +12,5 @@
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
     echo 'Connessione riuscita';
+
 ?>
