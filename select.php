@@ -23,6 +23,7 @@
     	}  
     }
 	
-	$conn->close();
+	
     print(json_encode($output));
+	$conn->close();
 ?>
