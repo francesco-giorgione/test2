@@ -10,6 +10,7 @@
 
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql= "select * from Contenuti";
     $getResults= sqlsrv_query($conn, $tsql);
 
     echo ("Reading data from table" . PHP_EOL);
