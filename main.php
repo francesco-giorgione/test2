@@ -14,7 +14,10 @@
 
     echo ("Reading data from table" . PHP_EOL);
     if ($getResults == FALSE)
-        echo (sqlsrv_errors());
+        echo "PROBLEMA";
+    else
+        echo "OK";
+
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
      echo ("Nuovo risultato");
     }
