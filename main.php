@@ -1,4 +1,6 @@
 <?php
+echo "Sto provando a connettermi al db";
+
 $db_host = "ilike.database.windows.net";
 $db_name = " iLike";
 $db_user = "CloudSAe14a0d66";
