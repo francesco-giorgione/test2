@@ -11,9 +11,7 @@
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql = $_POST['query'];
-	echo ($tsql);
     $stmt= sqlsrv_query($conn, $tsql);
-	echo ($stmt);
 	
 	if ($stmt) {  
 		echo "true"; 
