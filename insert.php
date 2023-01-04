@@ -8,17 +8,12 @@
     );
    
 
-	if ($conn === false) {  
-    echo "Could not connect.\n";  
-    die(print_r(sqlsrv_errors(), true));  
-}  
-   
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql = $_POST['query'];
 	echo ($tsql);
-	  
-	/* Prepare and execute the query. */  
-	$stmt = sqlsrv_query($conn, $tsql, array()); 
-	echo "Creato statement";
+    $stmt= sqlsrv_query($conn, $tsql);
+	echo ($stmt);
 	
 	if ($stmt) {  
 		echo "Row successfully inserted.\n";  
