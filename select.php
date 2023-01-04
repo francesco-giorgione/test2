@@ -10,24 +10,19 @@
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql = $_POST['query'];
-	echo ($tsql);
     $getResults= sqlsrv_query($conn, $tsql);
 
 
-    if ($getResults == FALSE)
-        echo "PROBLEMA";
-    else
-        echo "OK";
-	
-	$output = array();
-	$i = 0;
+    if ($getResults != FALSE) {
+		$output = array();
+		$i = 0;
 
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-		$output[$i] = $row;
-		$i = $i + 1;
+    	while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+			$output[$i] = $row;
+			$i = $i + 1;
+    	}  
     }
 	
     print(json_encode($output));
-	print("Sono alla fine");
-
+	%conn->close();
 ?>
