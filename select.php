@@ -24,5 +24,5 @@
     }
 	
     print(json_encode($output));
-	%conn->close();
+	$conn->close();
 ?>
