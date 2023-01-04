@@ -8,16 +8,24 @@
     );
    
 
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
+	if ($conn === false) {  
+    echo "Could not connect.\n";  
+    die(print_r(sqlsrv_errors(), true));  
+}  
+   
 	$tsql = $_POST['query'];
-	echo($tsql);
+	  
+	/* Prepare and execute the query. */  
+	$stmt = sqlsrv_query($conn, $tsql);  
+	if ($stmt) {  
+		echo "Row successfully inserted.\n";  
+	} else {  
+		echo "Row insertion failed.\n";  
+		die(print_r(sqlsrv_errors(), true));  
+	}  
+	  
+	/* Free statement and connection resources. */  
+	sqlsrv_free_stmt($stmt);  
+	sqlsrv_close($conn);  
 	
-	if ($conn->query($tsql) === TRUE) {
-		echo "New record created successfully";
-	} else {
-		echo "Error: " . $tsql . "<br>" . $conn->error;
-	}
-
-	$conn->close();
-?>
+?>  
